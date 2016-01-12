@@ -10,13 +10,16 @@ import UIKit
 import SDWebImage
 
 class CardViewController: UIViewController {
+    private let descriptionViewMinHeight: CGFloat = 100
+    
     var card: CardItem?
+    var isDescriptionViewSmall: Bool = true
     
     @IBOutlet weak var topImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var likesLabel: UILabel!
     
     override func viewDidLoad() {
@@ -29,9 +32,8 @@ class CardViewController: UIViewController {
         self.titleLabel.text = card!.title
         self.dateLabel.text = card!.date
         self.authorLabel.text = card!.author
-        self.descriptionLabel.text = card!.description
+        self.descriptionTextView.text = card!.description
         self.likesLabel.text = card!.likes
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -41,7 +43,42 @@ class CardViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        self.updateDescriprionHeightToState(self.isDescriptionViewSmall)
+    }
+    
+    //MARK: Actions
+    private func updateDescriprionHeightToState(needSmall: Bool) {
+        var frame: CGRect = self.descriptionTextView.frame;
+        
+        if !needSmall {
+            let s = self.descriptionTextView.text
+            let newSize: CGSize = self.descriptionTextView.font!.sizeOfString(s, constrainedToWidth: frame.width)
+            
+            frame.size = CGSizeMake(frame.width, newSize.height)
+        } else {
+            frame.size = CGSizeMake(frame.width, self.descriptionViewMinHeight)
+        }
+        
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.descriptionTextView.frame = frame;
+            self.view.setNeedsUpdateConstraints()
+            self.view.setNeedsLayout()
+            self.view.superview!.layoutIfNeeded()
+            
+            self.likesLabel.layoutIfNeeded()
+        }
+    }
+    
+    private func toggleDescriprionHeight() {
+        self.isDescriptionViewSmall = !self.isDescriptionViewSmall
+        self.updateDescriprionHeightToState(self.isDescriptionViewSmall)
+    }
+    
+    @IBAction func moreButton(sender: UIButton) {
+        self.toggleDescriprionHeight()
+    }
 
 }
 
