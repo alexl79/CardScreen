@@ -14,6 +14,7 @@
 		F9DECA451C44F7B600011C48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DECA431C44F7B600011C48 /* LaunchScreen.storyboard */; };
 		F9DECA501C44F7B700011C48 /* CardScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DECA4F1C44F7B700011C48 /* CardScreenTests.swift */; };
 		F9DECA5B1C44F7B700011C48 /* CardScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DECA5A1C44F7B700011C48 /* CardScreenUITests.swift */; };
+		F9DECA6C1C4500D900011C48 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DECA6B1C4500D900011C48 /* image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F9DECA561C44F7B700011C48 /* CardScreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardScreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DECA5A1C44F7B700011C48 /* CardScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScreenUITests.swift; sourceTree = "<group>"; };
 		F9DECA5C1C44F7B700011C48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9DECA6B1C4500D900011C48 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		F9DECA391C44F7B600011C48 /* CardScreen */ = {
 			isa = PBXGroup;
 			children = (
+				F9DECA6A1C4500D900011C48 /* Resources */,
 				F9DECA3A1C44F7B600011C48 /* AppDelegate.swift */,
 				F9DECA3C1C44F7B600011C48 /* ViewController.swift */,
 				F9DECA3E1C44F7B600011C48 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				F9DECA5C1C44F7B700011C48 /* Info.plist */,
 			);
 			path = CardScreenUITests;
+			sourceTree = "<group>";
+		};
+		F9DECA6A1C4500D900011C48 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F9DECA6B1C4500D900011C48 /* image.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 				F9DECA451C44F7B600011C48 /* LaunchScreen.storyboard in Resources */,
 				F9DECA421C44F7B600011C48 /* Assets.xcassets in Resources */,
 				F9DECA401C44F7B600011C48 /* Main.storyboard in Resources */,
+				F9DECA6C1C4500D900011C48 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
