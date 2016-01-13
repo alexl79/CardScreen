@@ -17,6 +17,7 @@
 		F92A708B1C452A3D00931709 /* CheckListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A708A1C452A3D00931709 /* CheckListProvider.swift */; };
 		F92A708D1C454ABC00931709 /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A708C1C454ABC00931709 /* CardItem.swift */; };
 		F92A70901C45961A00931709 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A708F1C45961A00931709 /* UIFontExtension.swift */; };
+		F92A70921C45AC6200931709 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A70911C45AC6200931709 /* UIViewExtension.swift */; };
 		F9DECA3B1C44F7B600011C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DECA3A1C44F7B600011C48 /* AppDelegate.swift */; };
 		F9DECA3D1C44F7B600011C48 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DECA3C1C44F7B600011C48 /* CardViewController.swift */; };
 		F9DECA401C44F7B600011C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DECA3E1C44F7B600011C48 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		F92A708A1C452A3D00931709 /* CheckListProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListProvider.swift; sourceTree = "<group>"; };
 		F92A708C1C454ABC00931709 /* CardItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		F92A708F1C45961A00931709 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		F92A70911C45AC6200931709 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F9DECA371C44F7B600011C48 /* CardScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DECA3A1C44F7B600011C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9DECA3C1C44F7B600011C48 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardViewController.swift; path = ../CardViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				F92A708F1C45961A00931709 /* UIFontExtension.swift */,
+				F92A70911C45AC6200931709 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			files = (
 				F92A708D1C454ABC00931709 /* CardItem.swift in Sources */,
 				F9DECA3D1C44F7B600011C48 /* CardViewController.swift in Sources */,
+				F92A70921C45AC6200931709 /* UIViewExtension.swift in Sources */,
 				F9DECA3B1C44F7B600011C48 /* AppDelegate.swift in Sources */,
 				F92A70891C45295B00931709 /* ListViewController.swift in Sources */,
 				F92A70901C45961A00931709 /* UIFontExtension.swift in Sources */,
