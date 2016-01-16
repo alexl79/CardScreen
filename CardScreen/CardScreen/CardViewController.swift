@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 
 class CardViewController: UIViewController, UIScrollViewDelegate {
-    private let descriptionViewMinHeight: CGFloat = 110
+    private let descriptionViewMinHeight: CGFloat = 90
     private let scrollViewBottomInset: CGFloat = 20
     private var navigationBarHeight: CGFloat = 0
     
@@ -66,7 +66,12 @@ class CardViewController: UIViewController, UIScrollViewDelegate {
         self.titleLabel.text = card!.title
         self.dateLabel.text = card!.date
         self.authorLabel.text = card!.author
+        
         self.descriptionTextView.text = card!.description
+        self.descriptionTextView.textContainerInset = UIEdgeInsetsZero
+        self.descriptionTextView.sizeToFit()
+        self.descriptionTextView.scrollRangeToVisible(NSMakeRange(0, 1))
+        
         self.likesLabel.text = card!.likes
         
         self.topImageHeight = self.topImage.height
@@ -83,8 +88,12 @@ class CardViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.view.layoutIfNeeded()
-        
+
         self.updateDescriprionHeightToState(false, test: true)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.scrollView.delegate = nil
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,7 +102,10 @@ class CardViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
-        updateNavigationBarHeight()       
+        updateNavigationBarHeight()
+        
+        self.descriptionTextView.scrollRangeToVisible(NSMakeRange(0, 1))
+        
         self.updateDescriprionHeightToState(self.isDescriptionViewSmall)
     }
     
@@ -124,8 +136,10 @@ class CardViewController: UIViewController, UIScrollViewDelegate {
     private func updateDescriprionHeightToState(needSmall: Bool, test: Bool = false) {
         var frame: CGRect = self.descriptionTextView.frame;
 
-        let s = self.descriptionTextView.text
-        let newSize: CGSize = self.descriptionTextView.font!.sizeOfString(s, constrainedToWidth: frame.width)
+        //let s = self.descriptionTextView.text
+        //let newSize: CGSize = self.descriptionTextView.font!.sizeOfString(s, constrainedToWidth: frame.width)
+        
+        let newSize = self.descriptionTextView.contentSize
         
         if !needSmall {
             frame.size = CGSizeMake(frame.width, newSize.height)
